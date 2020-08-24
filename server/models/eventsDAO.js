@@ -42,7 +42,7 @@ exports.post = (req, res, next) => {
 
     const current_user = decodeJWT(req.headers['authorization'])
 
-    newEvent = current_user._id
+    newEvent.whoCreated = current_user._id
 
     newEvent
         .save()
